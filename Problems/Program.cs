@@ -4,33 +4,35 @@ namespace Problems
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-			Console.WriteLine("Input message:   ");
+			bool booltester = true;
+			Program randomprogram = new Program();
+			while(booltester) {
+			Console.WriteLine("Input message(exit with ./false:   ");
 			string userinput = Console.ReadLine();
-			string x = Prefix(userinput);
+			if(userinput == "./false") break;
+			string x = randomprogram.Prefix(userinput);
 			Console.WriteLine(x);
 			Console.ReadLine();
+			}
         }
-		static string Prefix (string input){
+		public string Prefix (string input){
 			int counter = 0;
-			if (input == null) return null;
 			
-			for (int i = 0; i < input.Length; i++){
-				if (input[i] == ' ' || i == (input.Length -1)){
+			if (input == null) return null;
+			string[] tester = input.Split(' ');
+			
+			for	(int i = 0; i < tester.Length; i++){
+				if (tester[i] == ""){
+				
+				}
+				else{
 					counter++;
 				}
+				
+				
 			}
-			
-			
-			/*StringBuilder str = new StringBuilder();
-			str.append(str(input.Length));
-			str.append(",");
-			str.append(str(counter));
-			str.append(":");
-			str.append(input); */
-			
-			//return str.toString();
 			return ("" + input.Length + "," + counter + ":" + input);
 			
 		}
